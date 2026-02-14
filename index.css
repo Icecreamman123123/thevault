@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Range input */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: #334155;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #475569;
+  border-radius: 4px;
+  background: #1e293b;
+  cursor: pointer;
+  position: relative;
+}
+input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  border-color: transparent;
+}
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Select styling */
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px !important;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+select option {
+  background: #1e293b;
+  color: white;
+}
+
+/* ===== How It Works Animations ===== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes dot-pop {
+  0% { r: 0; opacity: 0; }
+  50% { r: 6; opacity: 1; }
+  100% { r: 5; opacity: 1; }
+}
+.animate-dot-1 { animation: dot-pop 0.4s ease-out 0.2s both; }
+.animate-dot-2 { animation: dot-pop 0.4s ease-out 0.4s both; }
+.animate-dot-3 { animation: dot-pop 0.4s ease-out 0.6s both; }
+.animate-dot-4 { animation: dot-pop 0.4s ease-out 0.8s both; }
+.animate-dot-5 { animation: dot-pop 0.4s ease-out 1.0s both; }
+.animate-dot-6 { animation: dot-pop 0.4s ease-out 1.2s both; }
+.animate-dot-7 { animation: dot-pop 0.4s ease-out 1.4s both; }
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out both;
+}
+
+@keyframes scramble {
+  0%, 100% { opacity: 0.8; }
+  25% { opacity: 1; }
+  50% { opacity: 0.6; }
+  75% { opacity: 0.9; }
+}
+.animate-scramble {
+  animation: scramble 2s ease-in-out infinite;
+}
+.animate-scramble-fast {
+  animation: scramble 1s ease-in-out infinite;
+}
+
+@keyframes clock-hand {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-clock-hand {
+  animation: clock-hand 8s linear infinite;
+}
+
+@keyframes countdown-arc {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 314; }
+}
+.animate-countdown-arc {
+  animation: countdown-arc 10s linear infinite;
+}
+
+@keyframes strength-fill {
+  0% { width: 0; }
+  100% { width: 120px; }
+}
+.animate-strength-fill {
+  animation: strength-fill 1.5s ease-out 0.5s both;
+}
